@@ -13,6 +13,7 @@ namespace Topic_7___P2_Assignment
             while (choice != "q")
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Welcome to Topic 7 Part 2's Main Menu! Please select an option to try based on the following list of vegetables: ");
                 Console.WriteLine();
                 for (int i = 0; i < vegetables.Count; i++)
@@ -30,13 +31,16 @@ namespace Topic_7___P2_Assignment
                 Console.WriteLine("6 - Clear the list");
                 Console.WriteLine("Q - Quit");
                 Console.WriteLine();
+                Console.ForegroundColor= ConsoleColor.White;
                 if (choice == "6")
                 {
                     Console.WriteLine("You can only select option 4 or quit since you have cleared the list! What is your choice? ");
                     choice = Console.ReadLine().ToLower().Trim();
                     while (choice != "q" && choice != "4")
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("That's not possible since you cleared the list. Try again!");
+                        Console.ForegroundColor = ConsoleColor.White;
                         choice = Console.ReadLine().ToLower().Trim();
                     }
                     Console.WriteLine();
@@ -50,6 +54,7 @@ namespace Topic_7___P2_Assignment
 
                 if (choice == "q")
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Thanks for playing! ");
                 }
                 else
@@ -64,6 +69,7 @@ namespace Topic_7___P2_Assignment
                         }
                         vegetables.RemoveAt(indexChoice);
                         Console.WriteLine($"The vegetable at index {indexChoice} has been succesfully removed!");
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine();
                         Console.WriteLine("Press ENTER to return to the main menu!");
                         Console.ReadLine();
@@ -86,6 +92,7 @@ namespace Topic_7___P2_Assignment
                             Console.WriteLine($"The list does not contain {vegetableChoice} and it was not removed.");
                             Console.WriteLine();
                         }
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Press ENTER to return to the main menu!");
                         Console.ReadLine();
 
@@ -105,6 +112,7 @@ namespace Topic_7___P2_Assignment
                         {
                             Console.WriteLine($"Sorry! The vegetable {vegetableChoice} does not exist in the list.");
                         }
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Press ENTER to return to the main menu!");
                         Console.ReadLine();
                     }
@@ -125,7 +133,7 @@ namespace Topic_7___P2_Assignment
                             Console.WriteLine($"The vegetable {vegetableChoice} has been successfully added to the list!");
                             Console.WriteLine();
                         }
-                     
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Press ENTER to return to the main menu!");
                         Console.ReadLine();
                     }
@@ -141,7 +149,8 @@ namespace Topic_7___P2_Assignment
                         {
                             Console.WriteLine(i + 1 + " - " + vegetables[i]);
                         }
-
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Press ENTER to return to the main menu!");
                         Console.ReadLine();
                     }
@@ -152,7 +161,7 @@ namespace Topic_7___P2_Assignment
                         vegetables.Clear();
                         Console.WriteLine("The list is now empty,");
                         Console.WriteLine();
-
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Press ENTER to return to the main menu!");
                         Console.ReadLine();
 
@@ -160,6 +169,7 @@ namespace Topic_7___P2_Assignment
 
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Invalid choice, press ENTER to continue.");
                         Console.ReadLine();
                     }
