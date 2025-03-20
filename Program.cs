@@ -30,8 +30,24 @@ namespace Topic_7___P2_Assignment
                 Console.WriteLine("6 - Clear the list");
                 Console.WriteLine("Q - Quit");
                 Console.WriteLine();
-                choice = Console.ReadLine().ToLower().Trim();
-                Console.WriteLine();
+                if (choice == "6")
+                {
+                    Console.WriteLine("You can only select option 4 or quit since you have cleared the list! What is your choice? ");
+                    choice = Console.ReadLine().ToLower().Trim();
+                    while (choice != "q" && choice != "4")
+                    {
+                        Console.WriteLine("That's not possible since you cleared the list. Try again!");
+                        choice = Console.ReadLine().ToLower().Trim();
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+                else
+                {
+                    choice = Console.ReadLine().ToLower().Trim();
+                    Console.WriteLine();
+                }
+
                 if (choice == "q")
                 {
                     Console.WriteLine("Thanks for playing! ");
@@ -97,9 +113,18 @@ namespace Topic_7___P2_Assignment
                         Console.WriteLine("You've selected option 4 - Add a vegetable");
                         Console.WriteLine("What vegetable should I add? ");
                         vegetableChoice = Console.ReadLine().ToUpper().Trim();
-                        Console.WriteLine();
-                        Console.WriteLine($"The vegetable {vegetableChoice} has been successfully added to the list!");
-                        Console.WriteLine();
+                        if (vegetables.Contains(vegetableChoice))
+                        {
+                            Console.WriteLine($"The list already contains {vegetableChoice}. I cannot add duplicates. ");
+
+                        }
+                        else
+                        {
+                            vegetables.Add(vegetableChoice);
+                            Console.WriteLine();
+                            Console.WriteLine($"The vegetable {vegetableChoice} has been successfully added to the list!");
+                            Console.WriteLine();
+                        }
                      
                         Console.WriteLine("Press ENTER to return to the main menu!");
                         Console.ReadLine();
@@ -107,10 +132,29 @@ namespace Topic_7___P2_Assignment
 
                     else if (choice == "5") // sort
                     {
+                        Console.WriteLine("You've selected option 5 - Sort the list");
+                        Console.WriteLine("I will now sort the list! ");
+                        vegetables.Sort();
+                        Console.WriteLine("Here is the new and improved sorted list: ");
+                        Console.WriteLine();
+                        for (int i = 0; i < vegetables.Count; i++)
+                        {
+                            Console.WriteLine(i + 1 + " - " + vegetables[i]);
+                        }
 
+                        Console.WriteLine("Press ENTER to return to the main menu!");
+                        Console.ReadLine();
                     }
                     else if (choice == "6") // clear
                     {
+                        Console.WriteLine("You've selected option 6 - Clear the list");
+                        Console.WriteLine("I will now clear the list! ");
+                        vegetables.Clear();
+                        Console.WriteLine("The list is now empty,");
+                        Console.WriteLine();
+
+                        Console.WriteLine("Press ENTER to return to the main menu!");
+                        Console.ReadLine();
 
                     }
 
