@@ -13,13 +13,15 @@ namespace Topic_7___P2_Assignment
             while (choice != "q")
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine("Welcome to Topic 7 Part 2's Main Menu! Please select an option to try based on the following list of vegetables: ");
                 Console.WriteLine();
+                Console.ForegroundColor= ConsoleColor.Green;
                 for (int i = 0; i < vegetables.Count; i++)
                 {
                     Console.WriteLine(i+1 + " - " + vegetables[i]);
                 }
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("Which part of this section would you like to try? ");
@@ -145,10 +147,12 @@ namespace Topic_7___P2_Assignment
                         vegetables.Sort();
                         Console.WriteLine("Here is the new and improved sorted list: ");
                         Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Green;
                         for (int i = 0; i < vegetables.Count; i++)
                         {
                             Console.WriteLine(i + 1 + " - " + vegetables[i]);
                         }
+                        Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Press ENTER to return to the main menu!");
